@@ -1,0 +1,28 @@
+head
+	base(href="/")
+	title sattelite
+	meta(name="viewport", content="width=device-width, initial-scale=1")
+
+body(ng-app="app")
+	nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation', ng-controller="navCtrl")
+		.container-fluid
+			// Brand and toggle get grouped for better mobile display
+			.navbar-header
+				button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar-collapse-part', aria-expanded='false')
+					span.sr-only toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				span.navbar-brand 
+					i.fa.fa-cutlery.fa-lg
+					span(ng-click="updateAdmin()") sattelite
+
+			#navbar-collapse-part.collapse.navbar-collapse
+				ul.nav.navbar-nav(ng-show="currentUser")
+					li(ui-sref-active="active")
+						a(ui-sref='menu')
+							span Lieferanten
+				ul.nav.navbar-nav.navbar-right
+					+loginButtons
+
+	.view(ui-view)
