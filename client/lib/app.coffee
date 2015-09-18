@@ -1,5 +1,7 @@
 # meteor accounts config
 accountsUIBootstrap3.setLanguage 'de'
+Accounts.ui.config
+	passwordSignupFields: 'USERNAME_AND_EMAIL'
 
 # overwrite underscore with lodash
 _ = lodash
