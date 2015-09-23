@@ -35,6 +35,11 @@
 							i.glyphicon.glyphicon-search
 						input.form-control(type="text", placeholder="Hier kannst du nach allem suchen. Gerichten, Zutaten...", ng-model="search")
 
-			.row
-				.col-md-12.menu(ng-repeat="item in order.menu.items | filter:search")
-					span {{item.name}}
+			.row.menu-item(ng-repeat="item in order.menu.items | filter:search")
+				.input-group
+					span.input-group-addon {{item.order_number}}
+					input#menu-item-name.form-control(type='text', ng-model="item.name")
+					span.input-group-addon {{item.price}} €
+					span.input-group-btn
+						button.btn.btn-primary(type='submit') Bestellen
+
