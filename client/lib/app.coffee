@@ -33,20 +33,15 @@ adminResolve =
 
 angular.module('app').config ['$stateProvider', '$urlRouterProvider', '$locationProvider', ($stateProvider, $urlRouterProvider, $locationProvider) ->
 	$stateProvider
-		.state 'menu',
+		.state 'menus',
 			url: '/'
-			templateUrl: 'client/jade/menu.html'
-			controller: 'chooseMenuCtrl'
-			resolve: userResolve
-		.state 'dish',
-			url: '/dish/:id'
-			templateUrl: 'client/jade/dish.html'
-			controller: 'printCtrl'
+			templateUrl: 'client/jade/menus.html'
+			controller: 'menusCtrl'
 			resolve: userResolve
 		.state 'order',
 			url: '/order/:id'
 			templateUrl: 'client/jade/order.html'
-			controller: 'adminCtrl'
+			controller: 'orderCtrl'
 			resolve: adminResolve
 		.state 'login',
 			url: '/login'
@@ -57,7 +52,7 @@ angular.module('app').config ['$stateProvider', '$urlRouterProvider', '$location
 ]
 
 angular.module('app').run ['$rootScope', '$state', ($rootScope, $state) ->
-	Accounts.onLogin () -> $state.go 'menu'
+	Accounts.onLogin () -> $state.go 'menus'
 	$rootScope.$on '$stateChangeError', (event, toState, toParams, fromState, fromParams, error) ->
 		# We can catch the error thrown when the $requireUser promise is rejected
 		# and redirect the user back to the main page
