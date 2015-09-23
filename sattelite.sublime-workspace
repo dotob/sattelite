@@ -519,6 +519,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "client/lib/app.coffee",
+			"settings":
+			{
+				"buffer_size": 1697,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/jade/index.jade",
+			"settings":
+			{
+				"buffer_size": 1973,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/config.coffee",
+			"settings":
+			{
+				"buffer_size": 748,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -998,8 +1022,96 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "client/lib/app.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1697,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								119,
+								119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "client/jade/index.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1973,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1714,
+								1714
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/config.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 748,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1055,6 +1167,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"inde",
+				"client\\jade\\index.jade"
+			],
+			[
+				"config",
+				"lib\\config.coffee"
+			],
+			[
+				"app",
+				"client\\lib\\app.coffee"
+			],
 			[
 				"rake",
 				"build\\Rakefile"
@@ -1272,16 +1396,8 @@
 				"client\\services\\timezone.coffee"
 			],
 			[
-				"inde",
-				"client\\views\\index.jade"
-			],
-			[
 				"tim",
 				"client\\services\\timezone.coffee"
-			],
-			[
-				"app",
-				"client\\app.coffee"
 			],
 			[
 				"sock",
@@ -1362,10 +1478,6 @@
 			[
 				"",
 				"server\\config\\config.dev.coffee"
-			],
-			[
-				"config",
-				"server\\config\\config.global.coffee"
 			],
 			[
 				"serv",
