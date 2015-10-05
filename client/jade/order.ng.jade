@@ -1,17 +1,38 @@
 .container
 	.well
 		span Bestellung bei 
-		strong {{order.menu.name}} 
+		strong {{ menu.name }} 
 		span  organisiert von 
-		strong {{order.user.username}}
+		strong {{ order.user.username }}
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
 			h3.panel-title Meine Bestellung
 		.panel-body
-			.row
-				.col-md-12.order_item(ng-repeat="order_item in order.order_items")
-					span {{order_item.name}}
+			.padding-5
+				.row(ng-show="order.order_items && order.order_items.length")
+					.col-md-12
+						table.table.table-striped
+							tfoot
+								tr
+									td
+									td
+									td
+									td.order-sum Summe:
+									td 
+										strong {{ order_sum }} €
+									td
+
+							tr(ng-repeat="order_item in order.order_items")
+								td {{order_item.order_number}}
+								td {{order_item.name}}
+								td 
+									small.text-muted {{order_item.description}}
+								td 
+									input.form-control(type="text", ng-model="order_item.specials", placeholder="Extra-Wünsche")
+								td {{order_item.price}} €
+								td 
+									button.btn.btn-warning.btn-xs.btn-order(type='submit', ng-click="removeOrderItem(order, item)") +
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
@@ -19,9 +40,16 @@
 		.panel-body
 			.padding-5
 				.row
-					.col-md-4.menu(ng-repeat="order in orders")
-						a.well(ng-href="/order/{{order._id}}")
-							h2 {{order.menu.name}}
+					.col-md-12
+						table.table.table-striped.table-condensed
+							tr(ng-repeat="item in favorites")
+								td {{item.order_number}}
+								td {{item.name}}
+								td 
+									small.text-muted {{item.description}}
+								td {{item.price}} €
+								td 
+									button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)") +
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
@@ -29,18 +57,21 @@
 		.panel-body
 			.padding-5
 				.row
-					form.hidden-print
-						.form-group
-							.input-group
-								.input-group-addon
-									i.glyphicon.glyphicon-search
-								input.form-control(type="text", placeholder="Hier kannst du nach allem suchen. Gerichten, Zutaten...", ng-model="search")
+					.col-md-12
+						form.hidden-print
+							.form-group
+								.input-group
+									.input-group-addon
+										i.glyphicon.glyphicon-search
+									input.form-control(type="text", placeholder="Hier kannst du nach allem suchen. Gerichten, Zutaten...", ng-model="search")
 
-				.row.menu-item(ng-repeat="item in menu.items | filter:search")
-					.input-group
-						span.input-group-addon.item-number {{item.order_number}}
-						input#menu-item-name.form-control(type='text', ng-model="item.name")
-						span.input-group-addon {{item.price}} €
-						span.input-group-btn
-							button.btn.btn-primary(type='submit', ng-click="addOrderItem(order, item)") Bestellen
+				table.table.table-striped.table-condensed
+					tr(ng-repeat="item in menu.items | orderBy:'-order_count' | filter:search")
+						td {{item.order_number}}
+						td {{item.name}}
+						td 
+							small.text-muted {{item.description}}
+						td {{item.price}} €
+						td 
+							button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)") +
 

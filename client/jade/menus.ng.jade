@@ -5,10 +5,14 @@
 		.panel-body
 			.padding-5
 				.row
-					.col-md-4.menu(ng-repeat="order in orders")
-						.well(ng-click="gotoOrder(order)")
-							.text-center {{order.menu.name}}
-							.text-center.text-muted von {{order.user.username}}
+					.col-md-12
+						.row
+							.col-md-4.menu(ng-repeat="order in orders")
+								.well(ng-click="gotoOrder(order)")
+									.text-center bei 
+										strong {{ menu_name(order.menu) }}
+									.text-center organisiert von 
+										strong {{ order.user.username }}
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
@@ -16,6 +20,8 @@
 		.panel-body
 			.padding-5
 				.row
-					.col-md-4.menu(ng-repeat="menu in menus")
-						.well(ng-click="createNewOrder(menu)")
-							.text-center {{menu.name}}
+					.col-md-12
+						.row
+							.col-md-4.menu(ng-repeat="menu in menus")
+								.well(ng-click="createNewOrder(menu)")
+									.text-center {{menu.name}}

@@ -17,4 +17,8 @@ angular.module('app').controller 'menusCtrl', ['$scope', '$meteor', '$rootScope'
 			id = _.first(inserts)._id
 			console.log "inserted new order with id:#{id}"
 			$state.go 'order', {id: id}
+
+	$scope.menu_name = (menuid) ->
+		menu = share.Menus.findOne {_id: menuid}
+		menu.name
 ]
