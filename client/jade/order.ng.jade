@@ -10,36 +10,37 @@
 			h3.panel-title Meine Bestellung
 		.panel-body
 			.row
-				.col-md-4.menu(ng-repeat="order in orders")
-					a.well(ng-href="/order/{{order._id}}")
-						h2 {{order.menu.name}}
+				.col-md-12.order_item(ng-repeat="order_item in order.order_items")
+					span {{order_item.name}}
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
 			h3.panel-title Favoriten
 		.panel-body
-			.row
-				.col-md-4.menu(ng-repeat="order in orders")
-					a.well(ng-href="/order/{{order._id}}")
-						h2 {{order.menu.name}}
+			.padding-5
+				.row
+					.col-md-4.menu(ng-repeat="order in orders")
+						a.well(ng-href="/order/{{order._id}}")
+							h2 {{order.menu.name}}
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
 			h3.panel-title Alle Gerichte
 		.panel-body
-			.row
-				form.hidden-print
-				.form-group
-					.input-group
-						.input-group-addon
-							i.glyphicon.glyphicon-search
-						input.form-control(type="text", placeholder="Hier kannst du nach allem suchen. Gerichten, Zutaten...", ng-model="search")
+			.padding-5
+				.row
+					form.hidden-print
+						.form-group
+							.input-group
+								.input-group-addon
+									i.glyphicon.glyphicon-search
+								input.form-control(type="text", placeholder="Hier kannst du nach allem suchen. Gerichten, Zutaten...", ng-model="search")
 
-			.row.menu-item(ng-repeat="item in order.menu.items | filter:search")
-				.input-group
-					span.input-group-addon {{item.order_number}}
-					input#menu-item-name.form-control(type='text', ng-model="item.name")
-					span.input-group-addon {{item.price}} €
-					span.input-group-btn
-						button.btn.btn-primary(type='submit') Bestellen
+				.row.menu-item(ng-repeat="item in menu.items | filter:search")
+					.input-group
+						span.input-group-addon.item-number {{item.order_number}}
+						input#menu-item-name.form-control(type='text', ng-model="item.name")
+						span.input-group-addon {{item.price}} €
+						span.input-group-btn
+							button.btn.btn-primary(type='submit', ng-click="addOrderItem(order, item)") Bestellen
 

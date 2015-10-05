@@ -9,12 +9,17 @@ angular.module('app').controller 'menusCtrl', ['$scope', '$meteor', '$rootScope'
 
 	$scope.createNewOrder = (menu) ->
 		saved = $scope.orders.save
-			menu: menu
+			menu: menu._id
 			user: $rootScope.currentUser
+			order_items: []
 
-		saved.then (inserts) ->
+		good = (inserts) ->
 			id = _.first(inserts)._id
 			console.log "inserted new order with id:#{id}"
 			$state.go 'order', {id: id}
+		bad = (reason) ->
+			console.log reason
+
+		saved.then good, bad
 
 ]

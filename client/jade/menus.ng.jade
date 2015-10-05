@@ -3,17 +3,19 @@
 		.panel-heading 
 			h3.panel-title Angefangene Bestellungen
 		.panel-body
-			.row
-				.col-md-4.menu(ng-repeat="order in orders")
-					.well(ng-click="gotoOrder(order)")
-						.text-center {{order.menu.name}}
-						.text-center.text-muted von {{order.user.username}}
+			.padding-5
+				.row
+					.col-md-4.menu(ng-repeat="order in orders")
+						.well(ng-click="gotoOrder(order)")
+							.text-center {{order.menu.name}}
+							.text-center.text-muted von {{order.user.username}}
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
 			h3.panel-title Neue Bestellung anlegen
 		.panel-body
-			.row
-				.col-md-4.menu(ng-repeat="menu in menus")
-					.well(ng-click="createNewOrder(menu)")
-						.text-center {{menu.name}}
+			.padding-5
+				.row
+					.col-md-4.menu(ng-repeat="menu in menus")
+						.well(ng-click="createNewOrder(menu)")
+							.text-center {{menu.name}}
