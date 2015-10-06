@@ -29,10 +29,14 @@
 								td 
 									small.text-muted {{order_item.description}}
 								td 
-									input.form-control(type="text", ng-model="order_item.specials", placeholder="Extra-Wünsche")
+									.input-group
+										input.form-control.input-sm(id="{{::order_item.id}}", type="text", value="{{::order_item.specials}}", placeholder="Extra-Wünsche")
+										span.input-group-btn
+											button.btn.btn-primary.btn-sm(ng-click="saveSpecials(order_item, order_item.id)") 
+												i.fa.fa-key.fa.fa-fw										
 								td {{order_item.price}} €
 								td 
-									button.btn.btn-warning.btn-xs.btn-order(type='submit', ng-click="removeOrderItem(order, item)") +
+									button.btn.btn-warning.btn-sm.btn-order(type='submit', ng-click="removeOrderItem(order, item)") +
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
