@@ -36,7 +36,8 @@
 												i.fa.fa-floppy-o.fa.fa-fw
 								td.vert-align {{order_item.price}} €
 								td.vert-align 
-									button.btn.btn-warning.btn-sm.btn-order(type='submit', ng-click="removeOrderItem(order, item)") +
+									button.btn.btn-warning.btn-sm.btn-order(type='submit', ng-click="removeOrderItem(order, order_item)")
+										i.fa.fa-trash-o
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
@@ -53,7 +54,8 @@
 									small.text-muted {{item.description}}
 								td {{item.price}} €
 								td 
-									button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)") +
+									button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)")
+										i.fa.fa-plus
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
@@ -77,5 +79,6 @@
 							small.text-muted {{item.description}}
 						td {{item.price}} €
 						td 
-							button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)") +
+							button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)")
+								i.fa.fa-plus
 
