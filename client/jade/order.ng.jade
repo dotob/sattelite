@@ -24,18 +24,18 @@
 									td
 
 							tr(ng-repeat="order_item in order.order_items")
-								td {{order_item.order_number}}
-								td {{order_item.name}}
-								td 
+								td.vert-align {{order_item.order_number}}
+								td.vert-align {{order_item.name}}
+								td.vert-align 
 									small.text-muted {{order_item.description}}
-								td 
+								td.vert-align 
 									.input-group
 										input.form-control.input-sm(id="{{::order_item.id}}", type="text", value="{{::order_item.specials}}", placeholder="Extra-Wünsche")
 										span.input-group-btn
 											button.btn.btn-primary.btn-sm(ng-click="saveSpecials(order_item, order_item.id)") 
-												i.fa.fa-key.fa.fa-fw										
-								td {{order_item.price}} €
-								td 
+												i.fa.fa-floppy-o.fa.fa-fw
+								td.vert-align {{order_item.price}} €
+								td.vert-align 
 									button.btn.btn-warning.btn-sm.btn-order(type='submit', ng-click="removeOrderItem(order, item)") +
 
 	.panel.panel-primary.top-space-10
