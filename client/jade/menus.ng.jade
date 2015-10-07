@@ -14,8 +14,8 @@
 									.text-center organisiert von 
 										strong {{ order.user.username }}
 									.text-center.top-space-10
-										button.btn.btn-info(ng-click="gotoOrder(order)") Bestellen
-										button.btn.btn-default(ng-click="gotoOrderSummary(order)") Bestellung ansehen
+										button.btn.btn-primary(ng-disabled="!order.isOpen", ng-click="gotoOrder(order)") Bestellen
+										button.btn.btn-default(ng-click="gotoOrderSummary(order)") Zur Übersicht
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 

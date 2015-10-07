@@ -4,6 +4,11 @@
 		strong {{ menu.name }} 
 		span  organisiert von 
 		strong {{ order.user.username }}
+		.pull-right.left-space-5
+			button.btn.btn-primary.btn-sm(ng-click="gotoOrderSummary(order)") Zur Übersicht
+
+	.alert.alert-danger(ng-if="!order.isOpen", role="alert")
+		| Bestellung ist geschlossen! Keine Änderung mehr möglich.
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
@@ -20,23 +25,23 @@
 									td
 									td.order-sum Summe:
 									td 
-										strong {{ order_sum }} €
+										strong.pull-right {{ order_sum }} €
 									td
 
-							tr(ng-repeat="order_item in order.order_items")
+							tr(ng-repeat="order_item in order.order_items | filter:{user: currentUser}")
 								td.vert-align {{order_item.order_number}}
-								td.vert-align {{order_item.name}}
+								td.vert-align.order-item-name {{order_item.name}}
 								td.vert-align 
 									small.text-muted {{order_item.description}}
 								td.vert-align 
 									.input-group
-										input.form-control.input-sm(id="{{::order_item.id}}", type="text", value="{{::order_item.specials}}", placeholder="Extra-Wünsche")
+										input.form-control.input-sm(id="{{::order_item.id}}", ng-disabled="!order.isOpen", type="text", value="{{::order_item.specials}}", placeholder="Extra-Wünsche")
 										span.input-group-btn
-											button.btn.btn-primary.btn-sm(ng-click="saveSpecials(order_item, order_item.id)") 
+											button.btn.btn-primary.btn-sm(ng-click="saveSpecials(order_item, order_item.id)", ng-disabled="!order.isOpen") 
 												i.fa.fa-floppy-o.fa.fa-fw
-								td.vert-align {{order_item.price}} €
+								td.vert-align.pull-right.order-item-price {{order_item.price}} €
 								td.vert-align 
-									button.btn.btn-warning.btn-sm.btn-order(type='submit', ng-click="removeOrderItem(order, order_item)")
+									button.btn.btn-warning.btn-sm.btn-order(type='submit', ng-disabled="!order.isOpen", ng-click="removeOrderItem(order, order_item)")
 										i.fa.fa-trash-o
 
 	.panel.panel-primary.top-space-10
@@ -54,7 +59,7 @@
 									small.text-muted {{item.description}}
 								td {{item.price}} €
 								td 
-									button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)")
+									button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-disabled="!order.isOpen", ng-click="addOrderItem(order, item)")
 										i.fa.fa-plus
 
 	.panel.panel-primary.top-space-10
@@ -80,6 +85,6 @@
 									small.text-muted {{item.description}}
 								td {{item.price}} €
 								td 
-									button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)")
+									button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-disabled="!order.isOpen", ng-click="addOrderItem(order, item)")
 										i.fa.fa-plus
 

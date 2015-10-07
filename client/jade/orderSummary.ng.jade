@@ -5,84 +5,49 @@
 		span.text-muted ({{ menu.phone }})
 		span  organisiert von 
 		strong {{ order.user.username }}
-		.pull-left
-			button.btn.btn-warning Bestellung schließen
+		.pull-right.left-space-5
+			button.btn.btn-warning.btn-sm(ng-if="order.isOpen", ng-click="closeOrder()") Bestellung schließen
+		.pull-right.left-space-5
+			button.btn.btn-success.btn-sm(ng-if="!order.isOpen", ng-click="openOrder()") Bestellung öffnen
+		.pull-right.left-space-5
+			button.btn.btn-primary.btn-sm(ng-disabled="!order.isOpen", ng-click="gotoOrder(order)") Bestellen
+
+	.alert.alert-danger(ng-if="!order.isOpen", role="alert")
+		| Bestellung ist geschlossen! Keine Änderung mehr möglich.
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
-			h3.panel-title Meine Bestellung
+			h3.panel-title Zusammenfassung
 		.panel-body
 			.padding-5
 				.row(ng-show="order.order_items && order.order_items.length")
 					.col-md-12
-						table.table.table-striped
+						table.table.table-striped.table-condensed
+							thead
+								tr
+									th #
+									th Name
+									th Beschreibung
+									th Wer
+									th Extrawünsche
+									th Preis
+
 							tfoot
 								tr
 									td
 									td
 									td
+									td
 									td.order-sum Summe:
 									td 
-										strong {{ order_sum }} €
-									td
+										strong.pull-right {{ order_sum }} €
 
 							tr(ng-repeat="order_item in order.order_items")
-								td.vert-align {{order_item.order_number}}
-								td.vert-align {{order_item.name}}
-								td.vert-align 
+								td {{order_item.order_number}}
+								td {{order_item.name}}
+								td 
 									small.text-muted {{order_item.description}}
-								td.vert-align 
-									.input-group
-										input.form-control.input-sm(id="{{::order_item.id}}", type="text", value="{{::order_item.specials}}", placeholder="Extra-Wünsche")
-										span.input-group-btn
-											button.btn.btn-primary.btn-sm(ng-click="saveSpecials(order_item, order_item.id)") 
-												i.fa.fa-floppy-o.fa.fa-fw
-								td.vert-align {{order_item.price}} €
-								td.vert-align 
-									button.btn.btn-warning.btn-sm.btn-order(type='submit', ng-click="removeOrderItem(order, order_item)")
-										i.fa.fa-trash-o
-
-	.panel.panel-primary.top-space-10
-		.panel-heading 
-			h3.panel-title Meine 5 Favoriten
-		.panel-body
-			.padding-5
-				.row
-					.col-md-12
-						table.table.table-striped.table-condensed
-							tr(ng-repeat="item in favorites")
-								td {{item.order_number}}
-								td {{item.name}}
-								td 
-									small.text-muted {{item.description}}
-								td {{item.price}} €
-								td 
-									button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)")
-										i.fa.fa-plus
-
-	.panel.panel-primary.top-space-10
-		.panel-heading 
-			h3.panel-title Alle Gerichte
-		.panel-body
-			.padding-5
-				.row
-					.col-md-12
-						form.hidden-print
-							.form-group
-								.input-group
-									.input-group-addon
-										i.glyphicon.glyphicon-search
-									input.form-control(type="text", placeholder="Hier kannst du nach allem suchen. Gerichten, Zutaten...", ng-model="search")
-				.row
-					.col-md-12
-						table.table.table-striped.table-condensed
-							tr(ng-repeat="item in menu.items | orderBy:'-order_count' | filter:search")
-								td {{item.order_number}}
-								td {{item.name}}
-								td 
-									small.text-muted {{item.description}}
-								td {{item.price}} €
-								td 
-									button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)")
-										i.fa.fa-plus
-
+								td {{order_item.user.username}}
+								td
+									.text-danger {{order_item.specials}}
+								td.pull-right {{order_item.price}} €

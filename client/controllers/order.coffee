@@ -1,22 +1,25 @@
 _ = lodash
 
-angular.module('app').controller 'orderCtrl', ['$scope', '$rootScope', '$stateParams', ($scope, $rootScope, $stateParams) ->
+angular.module('app').controller 'orderCtrl', ['$scope', '$rootScope', '$stateParams', '$state', ($scope, $rootScope, $stateParams, $state) ->
 	$scope.orders = $scope.$meteorCollection share.Orders
 	$scope.order = $scope.$meteorObject share.Orders, $stateParams.id
 	$scope.menu = $scope.$meteorObject share.Menus, $scope.order.menu
+	$scope.favorites = []
+
+	$scope.gotoOrderSummary = (order) ->
+		$state.go 'orderSummary', {id: order._id}
 
 	$scope.calcFavorites = () ->
 		usersOrders = _.chain($scope.orders).map((o) -> o.order_items).flatten().reject((oi) -> oi.user._id != $rootScope.currentUser._id).value()
 		usersOrdersGrouped = _.chain(usersOrders).groupBy((oi) -> oi.order_number).sortBy((v,k)-> -v.length).map((g) -> g[0].order_number).value()
-		console.log usersOrdersGrouped
-		favs = []
+		$scope.favorites = []
 		for k in usersOrdersGrouped
 			f = _.find $scope.menu.items, (mi) -> mi.order_number == k
-			favs.push f
-		$scope.favorites = favs
+			$scope.favorites.push f
 
 	$scope.updateSum = () ->
-		$scope.order_sum = _.sum $scope.order.order_items, (i) -> i.price
+		ois = _.filter $scope.order.order_items, (oi) -> oi.user._id == $rootScope.currentUser._id
+		$scope.order_sum = _.sum ois, (i) -> i.price
 		console.log "sum: #{$scope.order_sum}"
 
 	$scope.saveSpecials = (order_item, input_id) ->
@@ -32,6 +35,8 @@ angular.module('app').controller 'orderCtrl', ['$scope', '$rootScope', '$statePa
 	$scope.addOrderItem = (order, item) ->
 		item.id = Random.id() # add id for later specials hack
 		item.user = $rootScope.currentUser
+		item.isOpen = true
+
 		order.order_items.push item
 		$scope.updateSum()
 		console.log "added #{item.name} to order #{$scope.menu.name}"
