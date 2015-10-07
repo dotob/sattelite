@@ -16,7 +16,6 @@ angular.module('app').controller 'orderSummaryCtrl', ['$scope', '$rootScope', '$
 
 	$scope.updateSum = () ->
 		$scope.order_sum = _.sum $scope.order.order_items, (i) -> i.price
-		console.log "sum: #{$scope.order_sum}"
 
 	$scope.updateSum()
 ]

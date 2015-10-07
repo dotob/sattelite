@@ -28,7 +28,7 @@
 										strong.pull-right {{ order_sum }} €
 									td
 
-							tr(ng-repeat="order_item in order.order_items | filter:{user: currentUser}")
+							tr(ng-repeat="order_item in order.order_items | filter:{user: currentUser} | orderBy:'order_number'")
 								td.vert-align {{order_item.order_number}}
 								td.vert-align.order-item-name {{order_item.name}}
 								td.vert-align 
@@ -52,7 +52,7 @@
 				.row
 					.col-md-12
 						table.table.table-striped.table-condensed
-							tr(ng-repeat="item in favorites")
+							tr(ng-repeat="item in favorites | orderBy:'order_number'")
 								td {{item.order_number}}
 								td {{item.name}}
 								td 

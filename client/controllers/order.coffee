@@ -20,7 +20,6 @@ angular.module('app').controller 'orderCtrl', ['$scope', '$rootScope', '$statePa
 	$scope.updateSum = () ->
 		ois = _.filter $scope.order.order_items, (oi) -> oi.user._id == $rootScope.currentUser._id
 		$scope.order_sum = _.sum ois, (i) -> i.price
-		console.log "sum: #{$scope.order_sum}"
 
 	$scope.saveSpecials = (order_item, input_id) ->
 		specials = $("##{input_id}").val() # this is bad...accessing dom elements via jquery...
@@ -35,7 +34,6 @@ angular.module('app').controller 'orderCtrl', ['$scope', '$rootScope', '$statePa
 	$scope.addOrderItem = (order, item) ->
 		item.id = Random.id() # add id for later specials hack
 		item.user = $rootScope.currentUser
-		item.isOpen = true
 
 		order.order_items.push item
 		$scope.updateSum()

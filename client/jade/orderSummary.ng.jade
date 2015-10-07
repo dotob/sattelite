@@ -42,7 +42,7 @@
 									td 
 										strong.pull-right {{ order_sum }} €
 
-							tr(ng-repeat="order_item in order.order_items")
+							tr(ng-repeat="order_item in order.order_items | orderBy:'order_number'")
 								td {{order_item.order_number}}
 								td {{order_item.name}}
 								td 

@@ -20,6 +20,7 @@ angular.module('app').controller 'menusCtrl', ['$scope', '$meteor', '$rootScope'
 			user: $rootScope.currentUser
 			order_items: []
 			date: new Date()
+			isOpen: true
 
 		saved.then (inserts) ->
 			id = _.first(inserts)._id
