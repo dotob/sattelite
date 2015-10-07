@@ -15,77 +15,77 @@
       {
         "description": "mit Rindfleisch, frische Paprika",
         "name": "Pizza Caesar",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "52.1",
         "price": "9.0"
       },
       {
         "description": "mit Lachsstreifen, Paprika, Rucola ACHTUNG!!! selbe Bestellnummer wie Pizza Pollo",
         "name": "Pizza di Corsica ",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "53.2",
         "price": "8.9"
       },
       {
         "description": "mit Champignons, Broccoli, Hähnchenbrust, Knoblauch",
         "name": "Pizza Pollo Speziale",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "53.2",
         "price": "8.5"
       },
       {
         "description": "Nudeln nach Wahl: Spaghetti, Maccaroni, Tagliatelle\r\n\r\nmit Pesto, Basilikum, Olivenöl, Parmesan",
         "name": "Pasta Pesto Natura",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "54.1",
         "price": "5.0"
       },
       {
         "description": "Nudeln nach Wahl: Spaghetti, Maccaroni, Tagliatelle\r\n\r\nmit Rindfleisch, Spinat, Paprika, Tomatensauce, scharf",
         "name": "Rigatoni Diavolo ",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "79.4",
         "price": "8.5"
       },
       {
         "description": "Nudeln nach Wahl: Spaghetti, Maccaroni, Tagliatelle\r\n\r\nmit Paprika, Champignon, Tomatensauce, Knoblauch",
         "name": "Pasta Singara",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "79.5",
         "price": "7.0"
       },
       {
         "description": "Nudeln nach Wahl: Spaghetti, Maccaroni, Taglintelle\r\n\r\nmit Lachsstreifen, frischen Tomaten, Zwiebeln, Parmesan",
         "name": "Pasta Lachs Natura",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "79.6",
         "price": "8.5"
       },
       {
         "description": "Nudeln nach Wahl: Spaghetti, Maccaroni, Tagliatelle\r\n\r\nmit verschienem Gemüse (Broccoli, Aubergine, Zucchini, ...)",
         "name": "Pasta Verdura",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "79.5",
         "price": "8.5"
       },
       {
         "description": "Nudeln mit Fleischfüllung\r\n\r\nmit Tomatensauce",
         "name": "Ravioli Napoli",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "88.1",
         "price": "6.0"
       },
       {
         "description": "Nudeln mit Fleischfüllung \r\n\r\nmit Fleischsauce",
         "name": "Ravioli Bologna",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "88.2",
         "price": "7.0"
       },
       {
         "description": "Nudeln mit Fleischfüllung\r\n\r\nmit Spinat, Gorgonzola, Sahnesauce, Knoblauch ",
         "name": "Ravioli Verdi",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "88.3",
         "price": "6.9"
       },
@@ -99,147 +99,147 @@
       {
         "description": "Teigwaren aus Kartoffeln\r\n\r\nmit Salmesauce, Pesto",
         "name": "Gnocchi mit Sahnepesto",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "88.6",
         "price": "6.5"
       },
       {
         "description": "Teigwaren aus Kartoffeln\r\n\r\nmit Tomatensauce , Mozzarella, Basilikum",
         "name": "Gnocchi a la Verona",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "88.5",
         "price": "7.0"
       },
       {
         "description": "Nudeln mit Käse überbacken\r\n\r\nmit Gemüse",
         "name": "Cannelloni Verdura",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "96.1",
         "price": "7.5"
       },
       {
         "description": "Frisches Gemüse mit Käse überbacken\r\n\r\nmit Champignons in Sahnesauce, Fromfl., Vorderschinken, Tomaten, Knoblauch",
         "name": "Funghi speziale",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "105",
         "price": "7.5"
       },
       {
         "description": "Verschiedenes Gemüse mit Käse überbacken\r\n\r\n3 verschiedene Nudelarten in Sahnesauce mit Käse überbacken",
         "name": "Al Forno a la Romana",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "105.1",
         "price": "8.5"
       },
       {
         "description": "Kartoffelgerichte mit Käse überbacken\r\n\r\nmit Rindfleisch, Paprika, Spinat, Tomatensauce, Knoblauch, überbacken",
         "name": "Patata Cesar",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "110.1",
         "price": "8.5"
       },
       {
         "description": "3 kleine Schnitzel vom Schwein mit Pommes Frites, Kroketten oder Nudeln\r\n\r\nmit Oliven, Kapern, würziger Tomatensauce",
         "name": "Scaloppina Pizzaiola",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "123.2",
         "price": "9.9"
       },
       {
         "description": "3 kleine Schnitzel vom Schwein mit Pommes Frites, Kroketten oder Nudeln \r\n\r\nmit würziger Tomatensauce",
         "name": "Scaloppina Involtini",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "123.3",
         "price": "9.9"
       },
       {
         "description": "Marsalasauce (Marsala-Likör) ACHTUNG selbe Bestellnummer wie Pagasius mit Senfsauce",
         "name": "Scaloppina a la Marsala",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "123.4",
         "price": "11.5"
       },
       {
         "description": "in Sahnesauce, Champignon, Scampis\r\nFischgerichte mit Beilage nach Wahl (Gemüse)",
         "name": "Pangasius",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "123.6",
         "price": "12.5"
       },
       {
         "description": "Fischgericht mit Beilage nach Wahl (Gemüse) ",
         "name": "Pangasius mit Tomatensauce",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "123.5",
         "price": "11.9"
       },
       {
         "description": "Fischgerichte mit Beilage nach Wahl (Gemüse) ",
         "name": "Pangasius mit Senfsauce",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "123.4",
         "price": "11.9"
       },
       {
         "description": "",
         "name": "Argentinischer Rumpsteaksalat",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "150",
         "price": "8.9"
       },
       {
         "description": "Oliven, Schafkäse, Paprika, gebratene Champignon, Rucola",
         "name": "Pollo Speziale",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "150.1",
         "price": "8.5"
       },
       {
         "description": "Oliven, Paprika, Zwiebeln, Senfsauce",
         "name": "Lachssalat",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "150.2",
         "price": "9.0"
       },
       {
         "description": "mit Hähnchen und Peperoni",
         "name": "Gefüllte Pizzabrötchen",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "170",
         "price": "5.5"
       },
       {
         "description": "argentinische Rindscheiben mit Ruccola, Parmesan und Pinienkernen",
         "name": "Carpaccio",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "173",
         "price": "9.5"
       },
       {
         "description": "geröstetes Brot mit frischen Tomaten und frischen Paprika",
         "name": "Bruschetta",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "172",
         "price": "5.0"
       },
       {
         "description": "mit Salami",
         "name": "Gefüllte Pizzabrötchen",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "171",
         "price": "3.5"
       },
       {
         "description": "",
         "name": "Gemischtes Eis",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "",
         "price": "4.0"
       },
       {
         "description": "",
         "name": "Crepes de Chocolate",
-        "order_count": null,
+        "order_count": 0,
         "order_number": "",
         "price": "4.0"
       },

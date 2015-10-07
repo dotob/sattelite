@@ -70,15 +70,16 @@
 									.input-group-addon
 										i.glyphicon.glyphicon-search
 									input.form-control(type="text", placeholder="Hier kannst du nach allem suchen. Gerichten, Zutaten...", ng-model="search")
-
-				table.table.table-striped.table-condensed
-					tr(ng-repeat="item in menu.items | orderBy:'-order_count' | filter:search")
-						td {{item.order_number}}
-						td {{item.name}}
-						td 
-							small.text-muted {{item.description}}
-						td {{item.price}} €
-						td 
-							button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)")
-								i.fa.fa-plus
+				.row
+					.col-md-12
+						table.table.table-striped.table-condensed
+							tr(ng-repeat="item in menu.items | orderBy:'-order_count' | filter:search")
+								td {{item.order_number}}
+								td {{item.name}}
+								td 
+									small.text-muted {{item.description}}
+								td {{item.price}} €
+								td 
+									button.btn.btn-primary.btn-xs.btn-order(type='submit', ng-click="addOrderItem(order, item)")
+										i.fa.fa-plus
 
