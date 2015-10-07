@@ -13,8 +13,6 @@ angular.module('app').controller 'orderCtrl', ['$scope', '$rootScope', '$statePa
 		for k in usersOrdersGrouped
 			f = _.find $scope.menu.items, (mi) -> mi.order_number == k
 			favs.push f
-			if favs.length >= 5
-				break
 		$scope.favorites = favs
 
 	$scope.updateSum = () ->

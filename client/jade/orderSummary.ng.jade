@@ -2,8 +2,11 @@
 	.well
 		span Bestellung bei 
 		strong {{ menu.name }} 
+		span.text-muted ({{ menu.phone }})
 		span  organisiert von 
 		strong {{ order.user.username }}
+		.pull-left
+			button.btn.btn-warning Bestellung schließen
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 

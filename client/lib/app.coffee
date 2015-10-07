@@ -42,7 +42,12 @@ angular.module('app').config ['$stateProvider', '$urlRouterProvider', '$location
 			url: '/order/:id'
 			templateUrl: 'client/jade/order.html'
 			controller: 'orderCtrl'
-			resolve: adminResolve
+			resolve: userResolve
+		.state 'orderSummary',
+			url: '/order/:id/summary'
+			templateUrl: 'client/jade/orderSummary.html'
+			controller: 'orderSummaryCtrl'
+			resolve: userResolve
 		.state 'login',
 			url: '/login'
 			templateUrl: 'client/jade/login.html'

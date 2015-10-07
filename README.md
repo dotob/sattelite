@@ -3,7 +3,7 @@
 ## TODO
 
 - currency
-- favorites
+#- favorites
 - order summary
 - order summary grouped
 - mailing

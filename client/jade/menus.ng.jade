@@ -8,11 +8,14 @@
 					.col-md-12
 						.row
 							.col-md-4.menu(ng-repeat="order in orders")
-								.well(ng-click="gotoOrder(order)")
-									.text-center bei 
+								.well
+									.text-center Bei 
 										strong {{ menu_name(order.menu) }}
 									.text-center organisiert von 
 										strong {{ order.user.username }}
+									.text-center.top-space-10
+										button.btn.btn-info(ng-click="gotoOrder(order)") Bestellen
+										button.btn.btn-default(ng-click="gotoOrderSummary(order)") Bestellung ansehen
 
 	.panel.panel-primary.top-space-10
 		.panel-heading 
@@ -23,5 +26,11 @@
 					.col-md-12
 						.row
 							.col-md-4.menu(ng-repeat="menu in menus")
-								.well(ng-click="createNewOrder(menu)")
-									.text-center {{menu.name}}
+								.well
+									.text-center 
+										strong {{ menu.name }}
+									.text-center 
+										small {{ menu.description }}
+									.text-center.top-space-10
+										button.btn.btn-success(ng-click="createNewOrder(menu)") Neue Bestellung starten
+
